@@ -29,16 +29,28 @@ bool ModuleInput::Init()
 // Called every draw update
 update_status ModuleInput::Update()
 {
-	SDL_PumpEvents();
-
-	keyboard = SDL_GetKeyboardState(NULL);
-
+	//SDL_PumpEvents();
+	
 	// TODO 1: Make the application properly close when ESC is pressed (do not use exit())
-	if (keyboard[SDL_SCANCODE_ESCAPE]) {
-		return UPDATE_STOP;
-	}
 
 	// Homework: Make the application close up when pressing “X” button of the window
+	SDL_Event Events;
+
+	while (SDL_PollEvent(&Events))
+	{
+		// check of ESC key ------------------------------------------------------------------------
+		keyboard = SDL_GetKeyboardState(NULL);
+		
+		if (keyboard[SDL_SCANCODE_ESCAPE]) 
+		{
+			return UPDATE_STOP;
+		}
+
+		// check for closing window by pressing X with the mouse -----------------------------------
+
+		if (Events.type == SDL_QUIT) return UPDATE_STOP;
+	}
+
 
 	return UPDATE_CONTINUE;
 }

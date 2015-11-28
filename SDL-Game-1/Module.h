@@ -1,17 +1,18 @@
 #pragma once
 
 #include "Application.h"
-#include "Globals.h"
 
 class Module
 {
 public:
 
 	Module()
-	{}
+	{
+	}
 
 	virtual ~Module()
-	{}
+	{
+	}
 
 	virtual bool Init() 
 	{

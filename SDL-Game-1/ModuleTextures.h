@@ -1,4 +1,5 @@
 #pragma once
+
 #include<list>
 #include "Module.h"
 #include "Globals.h"
@@ -15,6 +16,7 @@ public:
 	bool CleanUp();
 
 	SDL_Texture* const Load(const char* path);
+	SDL_Texture* const getTexture();
 
 private:
 	std::list<SDL_Texture*> textures;

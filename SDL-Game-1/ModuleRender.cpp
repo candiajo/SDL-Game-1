@@ -5,8 +5,7 @@
 #include "SDL/include/SDL.h"
 
 ModuleRender::ModuleRender()
-{
-}
+{}
 
 // Destructor
 ModuleRender::~ModuleRender()

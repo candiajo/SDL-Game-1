@@ -10,8 +10,7 @@
 using namespace std;
 
 ModuleTextures::ModuleTextures()
-{
-}
+{}
 
 // Destructor
 ModuleTextures::~ModuleTextures()
@@ -77,4 +76,17 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 	}
 
 	return texture;
+}
+
+// versión para código que solo carga una textura
+SDL_Texture* const ModuleTextures::getTexture()
+{
+	if (textures.size() == 0)
+	{
+		return NULL;
+	}
+	else
+	{
+		return textures.front();
+	}
 }

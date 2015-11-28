@@ -2,13 +2,14 @@
 
 #include<list>
 #include "Globals.h"
-#include "Module.h"
 
 class ModuleRender;
 class ModuleWindow;
 class ModuleTextures;
 class ModuleInput;
 class ModuleScene;
+
+class Module;
 
 class Application
 {
