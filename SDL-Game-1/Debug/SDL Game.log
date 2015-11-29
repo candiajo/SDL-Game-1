@@ -1,0 +1,21 @@
+﻿Compilación iniciada a las 29/11/2015 17:48:48.
+     1>Proyecto "C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\SDL Game.vcxproj" en el nodo 2 (Build destinos).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleScene.cpp
+         ModuleScene.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\Debug\SDL Game - Master 1.exe" /INCREMENTAL /NOLOGO SDL2_mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\Debug\SDL Game - Master 1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\Debug\SDL Game - Master 1.lib" /MACHINE:X86 Debug\Application.obj
+         Debug\log.obj
+         Debug\Main.obj
+         Debug\ModuleAudio.obj
+         Debug\ModuleInput.obj
+         Debug\ModuleRender.obj
+         Debug\ModuleScene.obj
+         Debug\ModuleTextures.obj
+         Debug\ModuleWindow.obj
+         SDL Game.vcxproj -> C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\Debug\SDL Game - Master 1.exe
+     1>Compilación del proyecto terminada "C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\SDL Game.vcxproj" (Build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:02.56
