@@ -41,21 +41,51 @@ bool ModuleTextures::Init()
 bool ModuleTextures::CleanUp()
 {
 	LOG("Freeing textures and Image library");
+	
+	for (auto it = texturesMap.begin(); it != texturesMap.end(); ++it)
+		SDL_DestroyTexture(it->second);
 
-	for(list<SDL_Texture*>::iterator it = textures.begin(); it != textures.end(); ++it)
-		SDL_DestroyTexture(*it);
+	texturesMap.clear();
 
-	textures.clear();
 	return true;
 }
 
 // Load new texture from file path
-SDL_Texture* const ModuleTextures::Load(const char* path)
+//SDL_Texture* const ModuleTextures::Load(const char* path)
+//{
+//	SDL_Texture* texture = NULL;
+//	SDL_Surface* surface = IMG_Load(path);
+//
+//	if (surface == NULL)
+//	{
+//		LOG("Could not load surface with path: %s. IMG_Load: %s", path, IMG_GetError());
+//	}
+//	else
+//	{
+//		texture = SDL_CreateTextureFromSurface(App->renderer->renderer, surface);
+//
+//		if (texture == NULL)
+//		{
+//			LOG("Unable to create texture from surface! SDL Error: %s\n", SDL_GetError());
+//		}
+//		else
+//		{
+//			textures.push_back(texture);
+//		}
+//
+//		SDL_FreeSurface(surface);
+//	}
+//
+//	return texture;
+//}
+
+// Load new texture from file path
+SDL_Texture* const ModuleTextures::LoadMap(const char* name, const char* path)
 {
 	SDL_Texture* texture = NULL;
 	SDL_Surface* surface = IMG_Load(path);
 
-	if(surface == NULL)
+	if (surface == NULL)
 	{
 		LOG("Could not load surface with path: %s. IMG_Load: %s", path, IMG_GetError());
 	}
@@ -63,13 +93,13 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 	{
 		texture = SDL_CreateTextureFromSurface(App->renderer->renderer, surface);
 
-		if(texture == NULL)
+		if (texture == NULL)
 		{
 			LOG("Unable to create texture from surface! SDL Error: %s\n", SDL_GetError());
 		}
 		else
 		{
-			textures.push_back(texture);
+			texturesMap[name] = texture;
 		}
 
 		SDL_FreeSurface(surface);
@@ -78,15 +108,16 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 	return texture;
 }
 
-// versión para código que solo carga una textura
-SDL_Texture* const ModuleTextures::getTexture()
+SDL_Texture* const ModuleTextures::GetTextureMap(const char* name)
 {
-	if (textures.size() == 0)
+	auto i = texturesMap.find(name);
+
+	if (i == texturesMap.end())
 	{
-		return NULL;
+		return NULL;			// the map doesn't contains that name
 	}
 	else
 	{
-		return textures.front();
+		return i->second;		// found, returning the texture
 	}
 }

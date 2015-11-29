@@ -1,6 +1,7 @@
 #include "Globals.h"
 #include "Application.h"
 #include "ModuleInput.h"
+#include "ModuleAudio.h"
 #include "SDL/include/SDL.h"
 
 ModuleInput::ModuleInput()
@@ -44,6 +45,11 @@ update_status ModuleInput::Update()
 		if (keyboard[SDL_SCANCODE_ESCAPE]) 
 		{
 			return UPDATE_STOP;
+		}
+		if (keyboard[SDL_SCANCODE_SPACE])
+		{
+			App->audio->PlaySoundfx();
+			return UPDATE_CONTINUE;
 		}
 
 		// check for closing window by pressing X with the mouse -----------------------------------

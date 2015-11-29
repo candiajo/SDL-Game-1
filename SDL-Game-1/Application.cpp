@@ -5,6 +5,7 @@
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
 #include "ModuleScene.h"
+#include "ModuleAudio.h"
 
 using namespace std;
 
@@ -15,7 +16,8 @@ Application::Application()
 	modules.push_back(renderer = new ModuleRender());
 	modules.push_back(textures = new ModuleTextures());
 	modules.push_back(input = new ModuleInput());
-	modules.push_back(scene = new ModuleScene());
+	modules.push_back(audio = new ModuleAudio());
+	modules.push_back(scene = new ModuleScene());	
 
 	// TODO 7: Create a new "scene" module that loads a texture and draws it on the screen
 
@@ -30,6 +32,8 @@ Application::~Application()
 		delete(*it);
 
 	modules.clear();
+
+	SDL_Quit();
 }
 
 bool Application::Init()

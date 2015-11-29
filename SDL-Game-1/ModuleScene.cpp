@@ -1,6 +1,7 @@
 #include "ModuleScene.h"
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
+#include "ModuleAudio.h"
 
 
 ModuleScene::ModuleScene()
@@ -11,15 +12,33 @@ ModuleScene::~ModuleScene()
 
 bool ModuleScene::Init()
 {
-	bool loadOk = false;
+	texture = App->textures->LoadMap(SPRITE_NAME, SPRITE_FILE);
 
-	if (App->textures->Load(SPRITE_FILE))
+	if (texture == NULL)
 	{
-		texture = App->textures->getTexture();
-		loadOk = true;
+		return false;
 	}
+	else if (App->audio->LoadMusic(MUSIC_FILE) == false)
+	{
+		return false;
+	}
+	else if (App->audio->LoadSoundfx(SOUNDFX_FILE) == false)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
 
-	if (!loadOk || texture == NULL)
+bool ModuleScene::Start()
+{
+	App->audio->PlayMusic();
+
+	texture = App->textures->GetTextureMap(SPRITE_NAME);
+	
+	if (texture == NULL)
 	{
 		return false;
 	}

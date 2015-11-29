@@ -8,6 +8,7 @@ class ModuleWindow;
 class ModuleTextures;
 class ModuleInput;
 class ModuleScene;
+class ModuleAudio;
 
 class Module;
 
@@ -28,6 +29,7 @@ public:
 	ModuleTextures* textures;
 	ModuleInput* input;
 	ModuleScene* scene;
+	ModuleAudio* audio;
 
 private:
 	std::list<Module*> modules;
