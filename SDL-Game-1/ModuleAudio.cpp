@@ -1,5 +1,8 @@
 #include "ModuleAudio.h"
 
+#include "SDL2_mixer/include/SDL_mixer.h"
+#pragma comment( lib, "SDL2_mixer/lib/x86/SDL2_mixer.lib" )
+
 ModuleAudio::ModuleAudio()
 {}
 

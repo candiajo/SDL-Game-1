@@ -26,3 +26,4 @@ enum update_status
 #define SPRITE_NAME "sprites"
 #define MUSIC_FILE "music.ogg"
 #define SOUNDFX_FILE "soundfx.wav"
+#define NUMBER_OF_MODULES 6

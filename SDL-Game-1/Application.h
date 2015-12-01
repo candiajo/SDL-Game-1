@@ -1,6 +1,6 @@
 #pragma once
 
-#include<list>
+#include <array>
 #include "Globals.h"
 
 class ModuleRender;
@@ -32,7 +32,8 @@ public:
 	ModuleAudio* audio;
 
 private:
-	std::list<Module*> modules;
+	//std::list<Module*> modules;
+	std::array<Module*, NUMBER_OF_MODULES> modules;
 
 };
 
