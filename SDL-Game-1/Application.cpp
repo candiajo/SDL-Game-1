@@ -44,7 +44,6 @@ Application::~Application()
 	//	delete(*it);
 
 	//modules.clear();
-
 	SDL_Quit();
 }
 

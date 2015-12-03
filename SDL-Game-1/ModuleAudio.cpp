@@ -10,6 +10,7 @@ ModuleAudio::~ModuleAudio()
 {
 	Mix_CloseAudio();
 	Mix_Quit();
+	SDL_QuitSubSystem(SDL_INIT_AUDIO);
 }
 
 bool ModuleAudio::Init()

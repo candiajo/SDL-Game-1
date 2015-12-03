@@ -1,4 +1,4 @@
-﻿Compilación iniciada a las 01/12/2015 15:32:51.
+﻿Compilación iniciada a las 03/12/2015 11:26:44.
      1>Proyecto "C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\SDL Game.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ModuleAudio.cpp
@@ -13,10 +13,9 @@
          Debug\ModuleScene.obj
          Debug\ModuleTextures.obj
          Debug\ModuleWindow.obj
-     1>MSVCRTD.lib(cinitexe.obj) : warning LNK4098: la biblioteca predeterminada'msvcrt.lib' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
          SDL Game.vcxproj -> C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\Debug\SDL Game - Master 1.exe
      1>Compilación del proyecto terminada "C:\Users\Jordi\Documents\GitHub\SDL-Game-1\SDL-Game-1\SDL Game.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:03.54
+Tiempo transcurrido 00:00:02.43
