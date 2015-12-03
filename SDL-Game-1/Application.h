@@ -1,6 +1,7 @@
 #pragma once
 
 #include <array>
+//#include <list>
 #include "Globals.h"
 
 class ModuleRender;
@@ -28,8 +29,8 @@ public:
 	ModuleWindow* window;
 	ModuleTextures* textures;
 	ModuleInput* input;
-	ModuleScene* scene;
 	ModuleAudio* audio;
+	ModuleScene* scene;	
 
 private:
 	//std::list<Module*> modules;

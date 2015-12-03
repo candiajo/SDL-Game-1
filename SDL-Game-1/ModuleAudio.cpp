@@ -10,7 +10,6 @@ ModuleAudio::~ModuleAudio()
 {
 	Mix_CloseAudio();
 	Mix_Quit();
-	SDL_QuitSubSystem(SDL_INIT_AUDIO);
 }
 
 bool ModuleAudio::Init()
@@ -35,6 +34,9 @@ bool ModuleAudio::CleanUp()
 {
 	Mix_FreeMusic(music);
 	Mix_FreeChunk(soundfx);
+
+	LOG("Quitting SDL audio event subsystem");
+	SDL_QuitSubSystem(SDL_INIT_AUDIO);
 
 	return true;
 }
@@ -69,9 +71,13 @@ bool ModuleAudio::LoadSoundfx(const char* path)
 
 void ModuleAudio::PlayMusic()
 {
-	if (Mix_PlayingMusic() == 0)
+	if (music != NULL)
 	{
 		Mix_PlayMusic(music, -1);
+	}
+	else
+	{
+		LOG("No music loaded.\n");
 	}
 }
 

@@ -40,7 +40,7 @@ Application::~Application()
 		delete(it);
 	}
 
-	//for (list<Module*>::iterator it = modules.begin(); it != modules.end(); ++it)
+	//for (auto it = modules.begin(); it != modules.end(); ++it)
 	//	delete(*it);
 
 	//modules.clear();
@@ -72,11 +72,6 @@ bool Application::Start()
 update_status Application::Update()
 {
 	update_status ret = UPDATE_CONTINUE;
-
-	for (auto& it : modules)
-	{
-		ret = it->PreUpdate();
-	}
 	
 	for (auto it = modules.begin(); it != modules.end() && ret == UPDATE_CONTINUE; ++it)
 		ret = (*it)->PreUpdate();
